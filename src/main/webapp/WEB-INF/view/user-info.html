@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:form="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/user/{id}(id=${user.getId()})}" th:object="${user}">
+    <label for="name">Введите имя:</label>
+    <input type="text" th:field="*{name}" id="name">
+    <br><br>
+    <label for="name">Введите фамилию:</label>
+    <input type="text" th:field="*{surname}" id="surname">
+    <br><br>
+    <label for="name"> з/п:</label>
+    <input type="text" th:field="*{salary}" id="salary">
+    <br><br>
+    <input type="submit" value="OK"/>
+</form>
+</body>
+</html>
