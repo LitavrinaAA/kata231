@@ -20,7 +20,7 @@ public class UserController {
 
     @GetMapping("/")
     public String showAllUsers(Model model) {
-        List<User> allEmployees = userService.getAllUsera();
+        List<User> allEmployees = userService.getAllUsers();
         model.addAttribute("allUsers", allEmployees);
         return "all-users";
     }

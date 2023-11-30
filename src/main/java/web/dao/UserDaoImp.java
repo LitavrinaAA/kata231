@@ -1,19 +1,14 @@
 package web.dao;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import web.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
+import web.model.User;
+import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
 public class UserDaoImp implements UserDao {
-//   private final SessionFactory sessionFactory;
 @PersistenceContext()
 private EntityManager entityManager;
 
@@ -21,7 +16,7 @@ private EntityManager entityManager;
 
 
    @Override
-   public List<User> getAllUsera() {
+   public List<User> getAllUsers() {
        return entityManager.createQuery("SELECT user FROM User user", User.class).getResultList();
    }
 

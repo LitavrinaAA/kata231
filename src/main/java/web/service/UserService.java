@@ -6,7 +6,7 @@ import web.model.User;
 import java.util.List;
 
 public interface UserService {
-    public List<User> getAllUsera();
+    public List<User> getAllUsers();
 
     @Transactional
     void saveUser(User user);
