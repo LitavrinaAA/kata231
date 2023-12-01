@@ -22,12 +22,8 @@ private EntityManager entityManager;
 
    @Override
    public void saveUser(User user) {
-      if (user.getId() == 0) {
-         entityManager.persist(user);
-      } else {
-         entityManager.merge(user);
-      }
-      entityManager.close();
+      entityManager.merge(user);
+
    }
 
    @Override
@@ -38,13 +34,10 @@ private EntityManager entityManager;
 
    @Override
    public void delUser(int id) {
-      System.out.println("ДАО" + id);
       User user = entityManager.find(User.class, id);
-      System.out.println("ДАО Юзер " + user);
       if (user != null) {
          entityManager.remove(user);
       }
-      entityManager.close();
    }
 
 
